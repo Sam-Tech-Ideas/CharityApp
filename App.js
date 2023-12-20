@@ -6,6 +6,9 @@ import Home from './screens/Home';
 import Welcome from './screens/Welcome';
 import Login from './screens/auth/Login';
 import Register from './screens/auth/Register';
+import DetailScreen from './screens/DetailScreen';
+import Preview from './screens/Preview';
+import DonationScreen from './screens/DonationScreen';
 
 
 
@@ -41,13 +44,38 @@ export default function App() {
           }}
           component={Register}
         />
-        <Stack.Screen name="Home" 
-        options={
-          {
+        <Stack.Screen
+          name="Home"
+          options={{
             headerShown: false,
-          }
-        }
-        component={Home} />
+          }}
+          component={Home}
+        />
+        <Stack.Screen
+          options={{
+            headerTitleAlign: "center",
+            headerShadowVisible: false,
+          }}
+          name="Details"
+          component={DetailScreen}
+        />
+
+        <Stack.Screen
+          name="Preview"
+          options={{
+            presentation: "modal",
+            headerShown: "false",
+          }}
+          component={Preview}
+        />
+        <Stack.Screen
+          options={{
+            headerShadowVisible: false,
+            headerTitleAlign: "center",
+          }}
+          name="Donate"
+          component={DonationScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
